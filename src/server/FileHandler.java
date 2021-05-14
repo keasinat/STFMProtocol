@@ -12,7 +12,7 @@ public class FileHandler {
     public static boolean Write(String fileName, String fileContents) {
         OutputStream outputStream;
         try {
-            outputStream = new FileOutputStream("./assets/" + fileName);
+            outputStream = new FileOutputStream(fileName);
             PrintWriter writer = new PrintWriter(outputStream);
             writer.write(fileContents);
             writer.flush();
@@ -27,7 +27,7 @@ public class FileHandler {
 
     public static String Read(String fileName) {
         try {
-			InputStream inputStream = new FileInputStream("./assets/" + fileName);
+			InputStream inputStream = new FileInputStream(fileName);
 			Scanner scanner = new Scanner(inputStream);
 			String content = scanner.nextLine();
 			scanner.close();
